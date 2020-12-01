@@ -10,13 +10,15 @@ namespace AdventOfCode.Day01
         {
         }
 
+        private const int _sum = 2020;
+
         public override string GetPart1Answer()
         {
             var expenseHashSet = GetInputHashSet();
 
             foreach (var num in expenseHashSet)
             {
-                int result = 2020 - num;
+                int result = _sum - num;
                 if (expenseHashSet.Contains(result))
                 {
                     return $"{num * result}";
@@ -33,7 +35,7 @@ namespace AdventOfCode.Day01
             {
                 foreach (var num2 in expenseHashSet)
                 {
-                    int result = 2020 - num1 - num2;
+                    int result = _sum - num1 - num2;
                     if (expenseHashSet.Contains(result))
                     {
                         return $"{num1 * num2 * result}";
