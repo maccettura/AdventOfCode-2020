@@ -24,7 +24,9 @@ namespace AdventOfCode
         
         public void ConsoleDump(bool showDiagnostics = false)
         {
-            if(showDiagnostics)
+            Console.WriteLine($"Day {Day} | {Title}");
+
+            if (showDiagnostics)
             {
                 var sw = new Stopwatch();
 
