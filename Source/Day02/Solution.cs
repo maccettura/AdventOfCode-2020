@@ -29,7 +29,7 @@ namespace AdventOfCode.Day02
             string password = match.Groups[4].Value;
 
             int charCount = password.Count(x => x == character);
-            return charCount <= upperLimit && charCount > lowerLimit;
+            return charCount <= upperLimit && charCount >= lowerLimit;
         }
 
         public override string GetPart2Answer()
