@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode.Day04
@@ -16,14 +15,17 @@ namespace AdventOfCode.Day04
             var lines = GetResourceString().Split(Environment.NewLine + Environment.NewLine);
 
             string[] keys = new[] { "byr:", "iyr:", "eyr:", "hgt:", "hcl:", "ecl:", "pid:" };
-            var validCount = GetValidCount(lines, Validate);
 
-            return validCount.ToString();
-
-            bool Validate(string passport)
+            int validCount = 0;
+            foreach (var passport in lines)
             {
-                return keys.All(passport.Contains);
-            }    
+                if (keys.All(passport.Contains))
+                {
+                    validCount++;
+                }
+            }
+
+            return validCount.ToString();   
         }
 
         public override string GetPart2Answer()
@@ -41,27 +43,16 @@ namespace AdventOfCode.Day04
                 new Regex(@"pid:[\d]{9}($|\s)")
             };
 
-            var validCount = GetValidCount(lines, Validate);
-
-            return validCount.ToString();
-
-            bool Validate(string passport)
-            {
-                return regexes.All(x => x.Match(passport).Success);
-            }
-        }
-
-        private static int GetValidCount(string[] passports, Func<string, bool> validator)
-        {
             int validCount = 0;
-            foreach(var passport in passports)
+            foreach (var passport in lines)
             {
-                if (validator(passport))
+                if (regexes.All(x => x.Match(passport).Success))
                 {
                     validCount++;
                 }
             }
-            return validCount;
+
+            return validCount.ToString();
         }
     }
 }
