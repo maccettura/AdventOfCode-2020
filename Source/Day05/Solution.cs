@@ -24,26 +24,23 @@ namespace AdventOfCode.Day05
                 .OrderBy(x => x);
 
             int index = ids.First();
-            int seatId = 0;
-
             foreach(var id in ids)
             {
                 if(id != index)
                 {
-                    seatId = index;
-                    break;
+                    return index.ToString();
                 }
                 index++;
             }
-            return seatId.ToString();
+            return string.Empty;
         }
 
         private static IEnumerable<int> GetSeatIds(string[] lines)
         {
             foreach (var line in lines)
             {
-                int row = Convert.ToInt32(new string(line.Substring(0, 7).Select(x => x == 'F' ? '0' : '1').ToArray()), 2);
-                int column = Convert.ToInt32(new string(line.Substring(7, 3).Select(x => x == 'L' ? '0' : '1').ToArray()), 2);
+                int row = Convert.ToInt32(line.Substring(0, 7).Replace('F', '0').Replace('B', '1'), 2);
+                int column = Convert.ToInt32(line.Substring(7, 3).Replace('L', '0').Replace('R', '1'), 2);
                 yield return row * 8 + column;
             }
         }
