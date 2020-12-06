@@ -9,31 +9,21 @@ namespace AdventOfCode.Day06
         {
         }
 
-        public override string GetPart1Answer()
-        {
-            var groups = GetResourceString().Split(Environment.NewLine + Environment.NewLine);
+        public override string GetPart1Answer() => GetResourceString()
+                .Split(Environment.NewLine + Environment.NewLine)
+                .Select(x => x.Where(char.IsLetterOrDigit)
+                            .Distinct()
+                            .Count())
+                .Sum()
+                .ToString();
 
-            int total = 0;
-            foreach(var group in groups)
-            {
-                total += group.Where(c => char.IsLetter(c)).Distinct().Count();
-            }
-
-            return total.ToString();
-        }
-
-        public override string GetPart2Answer()
-        {
-            var groups = GetResourceString().Split(Environment.NewLine + Environment.NewLine);
-
-            int total = 0;
-            foreach (var group in groups)
-            {
-                var personCount = group.Split(Environment.NewLine).Length;
-                total += group.Where(c => char.IsLetter(c)).GroupBy(x => x).Where(x => x.Count() >= personCount).Count();
-            }
-
-            return total.ToString();
-        }
+        public override string GetPart2Answer() => GetResourceString()
+                .Split(Environment.NewLine + Environment.NewLine)
+                .Select(x => x.Where(char.IsLetterOrDigit)
+                            .GroupBy(y => y)
+                            .Where(y => y.Count() >= x.Split(Environment.NewLine).Length)
+                            .Count())
+                .Sum()
+                .ToString();
     }
 }
