@@ -384,7 +384,13 @@ namespace AdventOfCode.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to vibrant purple bags contain 3 shiny lavender bags, 1 mirrored gray bag, 4 muted bronze bags.
+        ///posh crimson bags contain 4 drab plum bags, 5 dotted purple bags, 3 vibrant lavender bags, 2 striped plum bags.
+        ///pale cyan bags contain 5 drab violet bags, 2 dotted crimson bags.
+        ///dim lime bags contain 1 muted purple bag, 2 striped silver bags.
+        ///clear aqua bags contain 2 plaid green bags.
+        ///bright teal bags contain 4 shiny crimson bags, 3 faded red bags, 2 posh lavender bags.
+        ///clear white bags contain 1 pale olive b [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Day07 {
             get {
@@ -393,7 +399,63 @@ namespace AdventOfCode.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to acc +22
+        ///acc +0
+        ///jmp +1
+        ///acc +49
+        ///jmp +203
+        ///jmp +545
+        ///acc +26
+        ///jmp +326
+        ///acc +34
+        ///acc +23
+        ///nop +93
+        ///jmp +346
+        ///nop +513
+        ///acc -5
+        ///jmp +413
+        ///jmp +560
+        ///acc -1
+        ///jmp +344
+        ///acc +44
+        ///acc -14
+        ///nop +570
+        ///acc +12
+        ///jmp +137
+        ///jmp +411
+        ///jmp +1
+        ///jmp +128
+        ///acc -4
+        ///acc +28
+        ///acc +42
+        ///jmp +206
+        ///jmp -7
+        ///nop +386
+        ///acc +9
+        ///jmp +280
+        ///jmp +63
+        ///acc +39
+        ///acc +13
+        ///acc +30
+        ///acc +19
+        ///jmp +25
+        ///jmp -9
+        ///acc +43
+        ///jmp +180
+        ///acc -16
+        ///acc -8
+        ///acc +17
+        ///acc +11
+        ///jmp +550
+        ///acc +29
+        ///acc +40
+        ///jmp -44
+        ///jmp -10
+        ///nop +425
+        ///acc -12
+        ///jmp +19
+        ///acc +38
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Day08 {
             get {
